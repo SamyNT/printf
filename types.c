@@ -30,7 +30,18 @@ char *string_type(va_list s)
 
 	string = va_arg(s, char *);
 	if (!string)
-		return("(null)");
+		return ("(null)");
 	return (string);
 }
+/**
+ * percent_type - returns % character
+ * Return: "%"
+ */
 
+char *percent_type(void)
+{
+	char *string;
+
+	string = "%";
+	return (string);
+}

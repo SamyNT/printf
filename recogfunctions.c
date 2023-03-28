@@ -13,7 +13,8 @@ char *(*get_specifier(char s))(va_list)
 	int i;
 	s_types valid_types[] = {
 		{"c", char_type},
-		{"s", string_type}
+		{"s", string_type},
+		{"%", percent_type}
 	};
 	for (i = 0; valid_types[i].type; i++)
 	{
@@ -31,11 +32,11 @@ char *(*get_specifier(char s))(va_list)
  */
 char *ctos(char c)
 {
-  char string[1];
-  char *p;
+	char string[1];
+	char *p;
 
-  p = string;
-  string[0] = c;
-  return (p);
+	p = string;
+	string[0] = c;
+	return (p);
 }
 

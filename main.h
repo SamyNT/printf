@@ -23,5 +23,6 @@ int _strlen(char *s);
 
 char *char_type(va_list c);
 char *string_type(va_list s);
+char *percent_type(void);
 char *ctos(char c);
 #endif

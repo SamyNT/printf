@@ -2,7 +2,7 @@
 #include <stdarg.h>
 
 /**
- * _printf - reproduces the behaviour of the printf 
+ * _printf - reproduces the behaviour of the printf
  * function
  *
  * @format: holds the input string
@@ -32,13 +32,13 @@ int _printf(const char *format, ...)
 			temp_buffer = found_type(args);
 			templen = _strlen(temp_buffer);
 			_strcpy(buffer + bufflen, temp_buffer);
-		       	bufflen += templen;	
+			bufflen += templen;
 			i++;
 		}
 		else
 		{
 			temp_buffer = ctos(format[i]);
-			_strcpy(buffer + bufflen , temp_buffer);
+			_strcpy(buffer + bufflen, temp_buffer);
 			bufflen++;
 		}
 
