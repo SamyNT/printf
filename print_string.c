@@ -13,8 +13,8 @@ void print_string(char *x, int *count )
 
 	if (x == NULL)
 	{
-		*x = "";
-		putchar(x);
+		x = "";
+		putchar('x');
 	}
 	for (i = 0; x[i] != '\0'; i++)
 	{

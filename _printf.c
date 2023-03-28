@@ -1,6 +1,7 @@
 #include "main.h"
 #include<stdarg.h>
 #include<stdio.h>
+#include<unistd.h>
 
 /**
  * _printf - produces output according to a format
@@ -12,16 +13,16 @@ int _printf(const char *format, ...)
 {
 	int i, count = 0;
 	va_list args;
+	char *s;
 
 	if (format == NULL)
-		return (0);
+		return (-1);
 	va_start(args, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
 		{
-			putchar(format[i]);
-			i++;
+			write(1, &format[i], 1);
 			count++;
 		}
 		else
