@@ -4,10 +4,11 @@
 /**
  * print_string - prints a string and returns number of characters printed
  * @x: string
+ * @count: number of characters printed
  * Return: int
  */
 
-void print_string(char *x, int *count )
+void print_string(char *x, int *count)
 {
 	int i;
 
