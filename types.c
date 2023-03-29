@@ -27,7 +27,7 @@ char *string_type(va_list s)
 	char *string;
 
 	string = va_arg(s, char *);
-	if (!string)
+	if (string == NULL)
 		return ("(null)");
 	return (string);
 }
