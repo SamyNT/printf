@@ -27,7 +27,7 @@ char *nothing_found(char c);
 void biggerbuffer(char **buffer, int *bufflen);
 void replace_specifier(const char *format, int *i, va_list args,
 	 char *buffer, int *bufflen);
-
+	 
 char *char_type(va_list c);
 char *string_type(va_list s);
 char *percent_type(void);

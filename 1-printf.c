@@ -17,7 +17,9 @@ int _printf(const char *format, ...)
 
 	buffer = malloc(sizeof(char) * BUFSIZE);
 	bufflen = 0;
-	if (format == NULL || buffer == NULL)
+	if (buffer == NULL)
+		return (-1);
+	if (format == NULL)
 		return (-1);
 	for (i = 0; i < BUFSIZE; i++)
 	{
@@ -35,7 +37,13 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(args);
-	write(1, buffer, bufflen);
+	if (*buffer != '\0')
+		write(1, buffer, bufflen);
+	else
+	{
+		write(1, '\0', 1);
+		return (1);
+	}
 	free(buffer);
 	return (bufflen);
 }
