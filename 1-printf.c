@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 {
 	int i, bufflen;
 	va_list args;
-	char *buffer, *temp_buffer;
+	char *buffer;
 
 	buffer = malloc(sizeof(char) * BUFSIZE);
 	bufflen = 0;
