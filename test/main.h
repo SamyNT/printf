@@ -4,6 +4,9 @@
 #define BUFSIZE 1025
 #include <stdarg.h>
 #include <unistd.h>
+#include <stdio.h>
+#include <stddef.h>
+#include <stdlib.h>
 /**
  * struct specifiers - structure to verify a character is a specifier
  * @type: Type of specifier
@@ -23,5 +26,6 @@ int _strlen(char *s);
 
 char *char_type(va_list c);
 char *string_type(va_list s);
+char *percent_type(void);
 char *ctos(char c);
 #endif
