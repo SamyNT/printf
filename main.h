@@ -1,28 +1,29 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef PRINT_F
+#define PRINT_F
 
-#define BUFSIZE 1025
-#include <stdarg.h>
 #include <unistd.h>
+#include <stdlib.h>
+#include <stdarg.h>
+
 /**
- * struct specifiers - structure to verify a character is a specifier
- * @type: Type of specifier
- * @f: pointer to function called when specifier is found
- */
-
-typedef struct specifiers
+* struct convert - defines a structure for symbols and functions
+*
+* @sym: The operator
+* @f: The function associated
+*/
+struct convert
 {
-	char *type;
-	char *(*f)();
-} s_types;
+	char *sym;
+	int (*f)(va_list);
+};
+typedef struct convert conver_t;
 
+/*Main functions*/
+int parser(const char *format, conver_t f_list[], va_list arg_list);
 int _printf(const char *format, ...);
-char *(*get_specifier(char s))(va_list);
-char *_strcpy(char *dest, char *src);
-int _strlen(char *s);
+int _write_char(char);
+int print_char(va_list);
+int print_string(va_list);
+int print_percent(va_list);
 
-char *char_type(va_list c);
-char *string_type(va_list s);
-char *percent_type(void);
-char *ctos(char c);
 #endif
