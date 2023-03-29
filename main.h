@@ -1,7 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#define BUFSIZE 1025
+#define BUFSIZE 8192
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdio.h>
@@ -24,7 +24,7 @@ char *(*get_specifier(char s))(va_list);
 char *_strcpy(char *dest, char *src);
 int _strlen(char *s);
 char *nothing_found(char c);
-void biggerbuffer(char *buffer, int bufflen);
+void biggerbuffer(char **buffer, int *bufflen);
 void replace_specifier(const char *format, int *i, va_list args,
 	 char *buffer, int *bufflen);
 

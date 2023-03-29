@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 		replace_specifier(format, &i, args, buffer, &bufflen);
 		if (bufflen >= BUFSIZE)
 		{
-			biggerbuffer(buffer, bufflen);
+			biggerbuffer(&buffer, &bufflen);
 			if (buffer == NULL)
 				return (-1);
 		}
@@ -47,12 +47,13 @@ int _printf(const char *format, ...)
  * Return: buffer
  *
 */
-void biggerbuffer(char *buffer, int bufflen)
+void biggerbuffer(char **buffer, int *bufflen)
 {
 	int new_bufflen;
+	/*char *new_buffer;*/
 
-	new_bufflen = 2 * bufflen;
-	buffer = realloc(buffer, sizeof(char) * new_bufflen);
+	new_bufflen = 2 * (*bufflen);
+	*buffer = realloc(*buffer, new_bufflen);
 }
 
 /**
