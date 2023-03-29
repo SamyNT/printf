@@ -18,6 +18,7 @@ int _printf(const char *format, ...)
 
 	bufflen = 0;
 	templen = 0;
+	found_type = NULL;
 	for (i = 0; i < BUFSIZE; i++)
 	{
 		buffer[i] = 0;
@@ -28,7 +29,9 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			found_type = get_specifier(format[i + 1]);
-			temp_buffer = found_type(args);
+			temp_buffer = (found_type == NULL) ?
+				nothing_found(format[i + 1]) :
+				found_type(args);
 			templen = _strlen(temp_buffer);
 			_strcpy(buffer + bufflen, temp_buffer);
 			bufflen += templen;

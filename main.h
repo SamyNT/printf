@@ -23,6 +23,7 @@ int _printf(const char *format, ...);
 char *(*get_specifier(char s))(va_list);
 char *_strcpy(char *dest, char *src);
 int _strlen(char *s);
+char *nothing_found(char c);
 
 char *char_type(va_list c);
 char *string_type(va_list s);

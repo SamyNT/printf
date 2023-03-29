@@ -11,7 +11,8 @@ char *(*get_specifier(char s))(va_list)
 	s_types valid_types[] = {
 		{"c", char_type},
 		{"s", string_type},
-		{"%", percent_type}
+		{"%", percent_type},
+		{NULL, NULL}
 	};
 	for (i = 0; valid_types[i].type; i++)
 	{
