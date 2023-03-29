@@ -1,5 +1,3 @@
-#include <stdlib.h>
-#include <stdarg.h>
 #include "main.h"
 /**
  * char_type - converts a char to a string

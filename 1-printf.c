@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdarg.h>
 
 /**
  * _printf - reproduces the behaviour of the printf
@@ -45,6 +44,6 @@ int _printf(const char *format, ...)
 
 	}
 	va_end(args);
-	write(1, buffer, BUFSIZE);
+	write(1, buffer, bufflen);
 	return (_strlen(buffer));
 }

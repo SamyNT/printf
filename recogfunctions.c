@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stddef.h>
-#include <stdlib.h>
 #include "main.h"
 /**
  * get_specifier - Identifies which specifier was passed to printf
