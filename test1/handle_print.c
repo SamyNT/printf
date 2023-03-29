@@ -1,4 +1,4 @@
-:#include "main.h"
+#include "main.h"
 
 /**
  * handle_print - Receives the main string and all the necessary parameters to
